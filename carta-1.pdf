@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notas · O Meu Site</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">🌸 O Meu Site</a>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="minecraft.html">Minecraft</a>
+    <a href="notas.html" class="on">Notas</a>
+    <a href="cartas.html">Cartas</a>
+    <a href="imagens.html">Imagens</a>
+  </nav>
+  <button id="tema" title="Alternar modo escuro/claro">🌙</button>
+</header>
+
+<main>
+<h1>📝 Notas</h1>
+<p class="sub">Textos pequeninos, pensamentos soltos.</p>
+<section class="grid">
+  <article class="nota"><p>Lembrar de beber água e fazer uma pausa 💧</p><small>27/10/2026</small></article>
+  <article class="nota"><p>Ideia: construir uma casa na árvore no Minecraft 🌳</p><small>27/10/2026</small></article>
+  <article class="nota"><p>Hoje correu bem. Estou orgulhoso(a) de mim ✨</p><small>26/10/2026</small></article>
+  <article class="nota"><p>Ver o pôr do sol esta semana 🌇</p><small>25/10/2026</small></article>
+  <article class="nota"><p>Ligar à família ao fim de semana 📞</p><small>24/10/2026</small></article>
+  <article class="nota"><p>Comprar um caderno novo 📓</p><small>23/10/2026</small></article>
+  <!-- Para adicionar uma nota, copia uma linha <article class="nota"> e muda o texto e a data -->
+</section>
+</main>
+
+<footer>Feito com 💖</footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartas · O Meu Site</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">🌸 O Meu Site</a>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="minecraft.html">Minecraft</a>
+    <a href="notas.html">Notas</a>
+    <a href="cartas.html" class="on">Cartas</a>
+    <a href="imagens.html">Imagens</a>
+  </nav>
+  <button id="tema" title="Alternar modo escuro/claro">🌙</button>
+</header>
+
+<main>
+<h1>💌 Cartas</h1>
+<p class="sub">Cartas escritas em PDF. Podes lê-las aqui ou descarregá-las.</p>
+<section class="grid">
+  <article class="card carta">
+    <div class="icone">💌</div>
+    <h3>Para ti, com carinho</h3>
+    <p class="meta">27 de outubro de 2026</p>
+    <p>Uma carta cheia de palavras boas.</p>
+    <div class="acoes">
+      <a class="btn" href="cartas/carta-1.pdf" target="_blank" rel="noopener">Ler</a>
+      <a class="btn pri" href="cartas/carta-1.pdf" download>Descarregar</a>
+    </div>
+  </article>
+  <article class="card carta">
+    <div class="icone">💌</div>
+    <h3>Uma carta de agradecimento</h3>
+    <p class="meta">20 de outubro de 2026</p>
+    <p>Por tudo o que fizeste por mim.</p>
+    <div class="acoes">
+      <a class="btn" href="cartas/carta-2.pdf" target="_blank" rel="noopener">Ler</a>
+      <a class="btn pri" href="cartas/carta-2.pdf" download>Descarregar</a>
+    </div>
+  </article>
+  <!-- Para adicionar uma carta: põe o PDF na pasta "cartas" e copia um bloco <article> -->
+</section>
+</main>
+
+<footer>Feito com 💖</footer>
+</body>
+</html>

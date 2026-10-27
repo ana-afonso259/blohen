@@ -1,0 +1,56 @@
+/* ===== Tema escuro/claro (aplica logo para não piscar) ===== */
+(function () {
+  var guardado = null;
+  try { guardado = localStorage.getItem("tema"); } catch (e) {}
+  if (guardado) document.documentElement.setAttribute("data-theme", guardado);
+})();
+
+document.addEventListener("DOMContentLoaded", function () {
+  var raiz = document.documentElement;
+  var botao = document.getElementById("tema");
+
+  function temaAtual() {
+    return raiz.getAttribute("data-theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+  function mostraIcone() { if (botao) botao.textContent = temaAtual() === "dark" ? "☀️" : "🌙"; }
+  mostraIcone();
+
+  if (botao) botao.addEventListener("click", function () {
+    var novo = temaAtual() === "dark" ? "light" : "dark";
+    raiz.setAttribute("data-theme", novo);
+    try { localStorage.setItem("tema", novo); } catch (e) {}
+    mostraIcone();
+  });
+
+  /* ===== Mensagem fofa (página principal) ===== */
+  var msg = document.getElementById("msg-fofa");
+  var btnMsg = document.getElementById("nova-msg");
+  var mensagens = [
+    "Hoje és mais importante do que pensas 💖",
+    "Um pequeno passo por dia já é um grande caminho 🌱",
+    "Respira fundo, estás a fazer um ótimo trabalho ☁️",
+    "O mundo fica mais bonito contigo nele 🌸",
+    "Merecias um abraço agora mesmo 🤗",
+    "Pequenas alegrias contam muito ✨"
+  ];
+  if (msg && btnMsg) btnMsg.addEventListener("click", function () {
+    msg.textContent = mensagens[Math.floor(Math.random() * mensagens.length)];
+  });
+
+  /* ===== Galeria: clicar numa imagem abre-a em ecrã grande ===== */
+  var imgs = document.querySelectorAll(".galeria img");
+  if (imgs.length) {
+    var lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.innerHTML = "<img alt=''>";
+    document.body.appendChild(lb);
+    imgs.forEach(function (i) {
+      i.addEventListener("click", function () {
+        lb.firstChild.src = i.src; lb.firstChild.alt = i.alt; lb.classList.add("on");
+      });
+    });
+    lb.addEventListener("click", function () { lb.classList.remove("on"); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") lb.classList.remove("on"); });
+  }
+});
